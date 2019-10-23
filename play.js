@@ -2,9 +2,8 @@ const net = require('net');
 const {connect} = require('./client');
 const {setupInput} = require('./input');
 
-connect();
-// const conn = connect();
+const conn = connect();
 
-setupInput();
+setupInput(conn);
 // const stdin = setupInput();
 
