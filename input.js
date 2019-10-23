@@ -1,21 +1,15 @@
 /**
- * Setup User Interface 
+ * Setup User Interface
  * Specifically, so that we can handle user input via stdin
  */
 
-const commands = {
-  97: 'Move: left',
-  100: 'Move: right',
-  115: 'Move: down',
-  119: 'Move: up',
-  122: 'Say: Coolio'
-};
+const {COMMANDS} = require('./constants');
 
 const handleUserInput = function(data, conn) {
 
   const commandKey = data.charCodeAt();
   //send command to server if it is legal
-  if (commands[commandKey]) conn.write(commands[commandKey]);
+  if (COMMANDS[commandKey]) conn.write(COMMANDS[commandKey]);
 
   if (data === '\u0003') {
     process.exit();
