@@ -7,7 +7,8 @@ const commands = {
   97: 'Move: left',
   100: 'Move: right',
   115: 'Move: down',
-  119: 'Move: up'
+  119: 'Move: up',
+  122: 'Say: Coolio'
 };
 
 const handleUserInput = function(data, conn) {
