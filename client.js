@@ -13,6 +13,12 @@ const connect = function() {
   conn.on('connect', () => {
     console.log('connection successfully established');
     conn.write('Name: YYZ');
+
+    //move randonly
+    const commands = ['up', 'down', 'left', 'right'];
+    for (let i = 0; i < 1000; i++) {
+      setTimeout(conn => conn.write(`Move: ${commands[~~(Math.random() * 4)]}`), i * 200, conn);
+    }
   });
 
   // interpret incoming data as text
