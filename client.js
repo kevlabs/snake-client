@@ -8,6 +8,13 @@ const connect = function() {
     host: '172.46.2.204',
     port: 50541
   });
+
+  //send name on connect
+  conn.on('connect', () => {
+    console.log('connection successfully established');
+    conn.write('Name: YYZ');
+  });
+
   // interpret incoming data as text
   conn.setEncoding('utf8');
 
